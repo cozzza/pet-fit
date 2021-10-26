@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,26 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+body{
+  background-color:rgb(222, 187, 233);
+}
+
+.nav-items{
+  padding: 20px;
+  display: flex;
+  justify-content: space-between; 
+  background-color:rgb(175, 129, 189); 
+  align-items: center;
+}
+
+.nav-items a{
+  text-decoration: none;
+  color: black;
+}
+
+#user-section{
+display: flex;
 }
