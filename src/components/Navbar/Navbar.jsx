@@ -14,7 +14,6 @@ const NavBar = () => {
             <h3 id="login-btn"> Log in </h3>
 
             <CartIcon/>
-
             </div>
         </nav>
     )

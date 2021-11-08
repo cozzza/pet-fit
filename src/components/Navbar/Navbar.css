@@ -1,8 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .nav-items{
     padding: 20px;
     display: flex;
     justify-content: space-between; 
-    background-color:rgb(175, 129, 189); 
+    background-color:#8674aa; 
     align-items: center;
   }
   
@@ -15,4 +21,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  }
+
+  .btn{
+    color: black;
+  }
+
+  .nav-items a:hover{
+    color:rgb(48, 32, 107);
   }

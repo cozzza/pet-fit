@@ -9,9 +9,10 @@ function App() {
   // )}
   
   return (
-    <div className="App">
+    <div className="App" style={{"backgroundColor":"#dfdbff"}}>
       <Navbar/>
-      <ItemListContainer saludo='Bienvenido a petFit'/>
+
+      <ItemListContainer  className="container-fluid" catalog='Catálogo de disfraces'/>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react'
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from './ItemList';
 import { getFetch } from '../Services/getFetch';
 import { useEffect , useState } from 'react';
+import './itemListContainer.css'
 
-function ItemListContainer ({ saludo }) {
+function ItemListContainer ({ catalog }) {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -20,10 +20,11 @@ function ItemListContainer ({ saludo }) {
 
 
 return (
-    <div className="disfraces">
-        <h1> {saludo} </h1>
-        <ItemCount initial={0} stock={5} />
+    <div className="container">
+        <h1> {catalog} </h1>
+        <div className="container, products-container">
         <ItemList products={products}/>
+        </div>
     </div>
 )  }
 
