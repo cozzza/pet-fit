@@ -1,6 +1,6 @@
 import { getProdDetail } from "../Services/getFetch";
 import { useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail.jsx";
+import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = ()=>{
     const [prod, setProd] = useState({})
@@ -8,8 +8,7 @@ const ItemDetailContainer = ()=>{
     useEffect(() => {
         getProdDetail
         .then(res => {        
-            console.log('llamada a api') // alguna accion con la respuesta  
-            setProd(res)
+            setProd(res[0])
         })    
         .catch(err => console.log(err))
         .finally(()=> console.log(false))       
@@ -19,7 +18,7 @@ const ItemDetailContainer = ()=>{
 
     return (
         <>
-            <div className='border border-3 border-secondary'>
+            <div style={{"height":"100vh", "margin-top":"50px"}}>
                 <ItemDetail product={prod} />
             </div>
         </>

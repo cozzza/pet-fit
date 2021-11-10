@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import ItemDetail from './components/items/ItemDetail.jsx';
+import ItemDetailContainer from './components/items/ItemDetailContainer';
 
 function App() {
 
@@ -11,12 +11,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App" style={{ "backgroundColor": "#dfdbff" }}>
-        <Navbar />
+        <Navbar/>
         <Switch>
-          <Route exact path = '/catalog'>
+          <Route exact path = '/'>
           <ItemListContainer className="container-fluid" catalog='Catálogo de disfraces'/>
           </Route>
-          <Route exact path ='/detail' component={ <ItemDetail/> }/>
+          <Route exact path ='/detail' component= { ItemDetailContainer }/>
           
         </Switch>
 
