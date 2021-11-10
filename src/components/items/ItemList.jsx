@@ -1,5 +1,5 @@
 import React from 'react'
-import Item from '../items/Item.jsx'
+import Item from './Item'
 
 
 function ItemList({products}) {
@@ -7,5 +7,4 @@ function ItemList({products}) {
         products.map(prod => < Item key={prod.id} prod={prod} /> )   
     )
 }
-
 export default ItemList

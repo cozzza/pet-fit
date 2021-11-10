@@ -1,6 +1,5 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
-import "./item.css"
 
 export const Item = ({ prod }) => {
     return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemList from './ItemList';
+import ItemList from '../items/ItemList'
 import { getFetch } from '../Services/getFetch';
 import { useEffect , useState } from 'react';
 import './itemListContainer.css'
@@ -13,7 +13,6 @@ function ItemListContainer ({ catalog }) {
             .then(res => {
                 setProducts(res)
             })
-
             .catch(err => console.log(err))
             .finally(()=> setLoading(false))
 }, [])
