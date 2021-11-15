@@ -3,10 +3,18 @@ import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetail = ({ product }) => {
 
-    // getItem = async () => {
 
+
+    // const [count, setCount] = useState(0);
+    // // const {cartList, agregarCarrito} = useContext(CartContext)
+
+    // const onAdd = (cant) =>{
+    //     setCount(cant)
+    //     agregarCarrito({...product, cantidad:cant})
     // }
+
     return (
+        <Link to={`/detail/${id}`} type="button" className="btn"> 
         <div className="container-fluid" style={{"display": "flex", "justifyContent":"space-evenly"}}>
 
             <span>
@@ -25,12 +33,9 @@ const ItemDetail = ({ product }) => {
                     <ItemCount initial={0} stock={5} />
                 </div>
             </span>
-
-
-
-
-
         </div>
+        </Link>
+
     )
 }
 

@@ -1,25 +1,29 @@
-import { getProdDetail } from "../Services/getFetch";
+import { getFetch, getProdDetail } from "../Services/getFetch";
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = ()=>{
     const [prod, setProd] = useState({})
 
+    const {id} = useParams()
+
+
     useEffect(() => {
-        getProdDetail
+        getFetch
         .then(res => {        
-            setProd(res[0])
+            setProd(res.find(element=> element.id === parseInt(id)))
         })    
         .catch(err => console.log(err))
         .finally(()=> console.log(false))       
-    },[]) 
+    },[id]) 
       
     console.log(prod);
 
     return (
         <>
             <div style={{"height":"100vh", "margin-top":"50px"}}>
-                <ItemDetail product={prod} />
+                <ItemDetail product= {prod} />
             </div>
         </>
     )

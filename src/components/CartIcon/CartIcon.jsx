@@ -1,11 +1,12 @@
-import Cart from './cart.svg'
+import { CartCount } from '../CartCount/CartCount';
 
 const CartIcon = () => {
     
     return (
-        <div>
-        <img src= {Cart} alt="icono de carrito de compras" width= "30px" height="24px"/>
-        {/* {count} */}
+        <div style={{"display": "flex" , "paddingTop":"5px" , "marginRight": "10px"}}>
+        <img src= '/assets/cart.svg' alt="icono de carrito de compras" height="32px"/>
+
+        <CartCount/>
         </div>
     )
 }

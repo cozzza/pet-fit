@@ -5,12 +5,12 @@ const ItemCount = ({ stock, initial }) => {
     const [count, setCount] = useState(initial);
 
     const increment = () => {
-        if(count < stock){
+        if (count < stock) {
             setCount(count + 1)
-        } 
+        }
     }
     const decrement = () => {
-        if(count > initial){
+        if (count > initial) {
             setCount(count - 1)
         }
     }
@@ -21,13 +21,13 @@ const ItemCount = ({ stock, initial }) => {
 
     return (
         <div id="item-count">
+            <button className="btn btn-secondary hov" id="decrement" onClick={decrement} disabled={count === initial}> - </button>
+            <label style={{ "margin": "20px" }}> {count}</label>
             <button id="increment" className="btn btn-secondary hov" onClick={increment} disabled={count >= stock} > + </button>
-            <label style={{"margin":"20px"}}> {count}</label>
-            <button className="btn btn-secondary hov" id="decrement" onClick={decrement} disabled={count == initial}> - </button>
 
-            <div id="addItemCart">
-                <button className="btn btn-secondary hov" onClick={onAdd} disabled={count == initial}> Agregar al carrito </button>
-            </div>
+            <button id="addItemCart" className="btn btn-secondary hov" onClick={onAdd} disabled={count === initial} style={{"marginLeft":"20px"}}>
+                <img src='/assets/cart.svg' alt="" width="20px" /> </button>
+
 
         </div>
 
