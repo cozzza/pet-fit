@@ -1,5 +1,4 @@
 import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
 
 export const Item = ({ prod }) => {
@@ -18,8 +17,6 @@ export const Item = ({ prod }) => {
             </div>
         </div>
         </Link>
-        
-
     )
 }
 

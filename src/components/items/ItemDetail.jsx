@@ -1,20 +1,19 @@
-import React from 'react'
+import React, { useState }  from 'react'
+import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 import './itemDetail.css'
 
+
 const ItemDetail = ({ product }) => {
+    const [wasClicked, setWasClicked] = useState(false)
 
-
-    // const [count, setCount] = useState(0);
-    // // const {cartList, agregarCarrito} = useContext(CartContext)
-
-    // const onAdd = (cant) =>{
-    //     setCount(cant)
-    //     agregarCarrito({...product, cantidad:cant})
-    // }
+    const onAdd = (cant) =>{
+        setWasClicked(true);
+        console.log(cant)
+    }
 
     return (
-        <div className="container-fluid card-container" style={{"display": "flex", "justifyContent":"space-evenly"}}>
+        <div className="container-fluid card-container und" style={{"display": "flex", "justifyContent":"space-evenly"}}>
 
             <span>
                 <img src={product.img} className="card-img card-img-top" alt="foto del producto" />
@@ -27,9 +26,14 @@ const ItemDetail = ({ product }) => {
                     <h2 style={{"fontWeight":"bold"}}>{product.name}</h2>
                 </div>
 
-                <div className="card-body" style={{"textAlign":"center"}}>
+                <div className="card-body" style={{"textAlign":"center", "minWidth":"150px"}}>
                     <h4 style={{"marginBottom":"200px"}}> Precio: ${product.price}</h4>
-                    <ItemCount initial={0} stock={5} />
+                   {wasClicked ? ( 
+                       <Link to={'/cart'}> ir al carrito</Link>
+                   ): (
+                    <ItemCount initial={0} stock={10} onAdd={onAdd}/>
+                   )}
+                   
                 </div>
             </span>
         </div>
