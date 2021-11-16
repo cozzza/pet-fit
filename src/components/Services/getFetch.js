@@ -1,3 +1,15 @@
+import aviator from '../../assets/aviator-dog-costume-kit.jpeg'
+import beetlejuice from '../../assets/beetlejuice-pet-costume.jpeg'
+import bussines from '../../assets/business-suit-dog-costume.jpeg'
+import caterpillar from '../../assets/dog-caterpillar-costume.jpeg'
+import ewok from '../../assets/ewok-pet-costume.jpeg'
+import freddyKrueger from'../../assets/freddy-krueger-pet-costume.jpeg'
+import ghostbusters from '../../assets/ghostbusters-jumpsuit-pet-costume.jpeg'
+import r2d2 from '../../assets/star-wars-r2-d2-pet-costume.jpeg'
+import waldo from '../../assets/wheres-waldo-pet-costume.jpeg'
+
+
+
 export const getFetch = new Promise ((res, rej) =>{
     const condition = true
     
@@ -18,7 +30,7 @@ export const products = [
         name: "Disfraz de aviador",
         price: "1500",
         id: "1",
-        img: "assets/aviator-dog-costume-kit.jpeg",
+        img: aviator,
         description: "",
         categoria: " "
     },
@@ -26,7 +38,7 @@ export const products = [
         name: "Disfraz de beetlejuice",
         price: "1700",
         id: "2",
-        img: "assets/beetlejuice-pet-costume.jpeg",
+        img: beetlejuice,
         description: "",
         categoria: "oferta"
     },
@@ -34,7 +46,7 @@ export const products = [
         name: "Disfraz de empresario",
         price: "2000",
         id: "3",
-        img: "assets/business-suit-dog-costume.jpeg",
+        img: bussines,
         description: "",
         categoria: " "
     },
@@ -42,7 +54,7 @@ export const products = [
         name: "Disfraz de oruga",
         price: "2200",
         id: "4",
-        img: "assets/dog-caterpillar-costume.jpeg",
+        img: caterpillar,
         description: " ",
         categoria: "oferta"
     },
@@ -50,16 +62,16 @@ export const products = [
         name: "Disfraz de ewok",
         price: "2400",
         id: "5",
-        img: "assets/ewok-pet-costume.jpeg",
+        img: ewok,
         description: "",
         categoria: " "
 
     },
     {
         name: "Disfraz de Freddy Krueger",
-        price: "2800",
+        price: "2500",
         id: "6",
-        img: "assets/freddy-krueger-pet-costume.jpeg",
+        img: freddyKrueger,
         description: "",
         categoria: "oferta"
     },
@@ -67,23 +79,24 @@ export const products = [
         name: "Disfraz de Cazafantasmas",
         price: "2800",
         id: "7",
-        img: "assets/ghostbusters-jumpsuit-pet-costume.jpeg",
+        img: ghostbusters,
         description: "",
         categoria: "oferta"
     },
     {
         name: "Disfraz de R2-D2",
-        price: "2800",
+        price: "2100",
         id: "8",
-        img: "assets/star-wars-r2-d2-pet-costume.jpeg",
+        img: r2d2,
         description: "",
         categoria: " "
     },
+    {
+        name: "Disfraz de Wally",
+        price: "2200",
+        id: "9",
+        img: waldo,
+        description: "",
+        categoria: ""
+    }
 ]
-
-
-export const prodDetail = [ { name: "Disfraz de R2-D2", price: "2800", id: "8", img: "assets/star-wars-r2-d2-pet-costume.jpeg", description: ""}] 
-
-export const getProdDetail = new Promise ((res, rej) => {
-    res (prodDetail)
-})

@@ -5,17 +5,17 @@ import { useEffect, useState } from 'react';
 import './itemListContainer.css'
 import { Link, useParams } from 'react-router-dom';
 
-function ItemListContainer({ }) {
+function ItemListContainer() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const {id} = useParams
+    const {id} = useParams()
     
     useEffect(() => {
 
-        if (oferta) {
+        if (id) {
             getFetch
-                .then(res => { setProducts(res.filter(prod => prod.categoria === id)) })
+                .then(res => {setProducts(res.filter(prod => prod.categoria === id)) })
                 .catch(err => console.log(err))
                 .finally(() => setLoading(false))
         } else {
@@ -23,9 +23,7 @@ function ItemListContainer({ }) {
                 .then(res => setProducts(res))
                 .catch(err => console.log(err))
                 .finally(() => setLoading(false))
-
         }
-
     }, [id])
 
     return (
@@ -37,7 +35,7 @@ function ItemListContainer({ }) {
                     <div style={{ "display": "flex", "justifyContent": "end" }}>
                         <h5>Filtrar | </h5>
 
-                        <Link to={'/categoria/todo'} ><h5 style={{ "margin": "0 10px 0 10px" }} > Todos los productos</h5> </Link>
+                        <Link to={'/catalogo'} ><h5 style={{ "margin": "0 10px 0 10px" }} > Todos los productos</h5> </Link>
                         <Link to={'/categoria/oferta'} ><h5 style={{ "margin": "0 10px 0 10px" }}> Ofertas </h5> </Link>
                     </div>
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import cart from '../../assets/cart.svg'
 
 const ItemCount = ({ stock, initial }) => {
     const [count, setCount] = useState(initial);
@@ -26,7 +27,7 @@ const ItemCount = ({ stock, initial }) => {
             <button id="increment" className="btn btn-secondary hov" onClick={increment} disabled={count >= stock} > + </button>
 
             <button id="addItemCart" className="btn btn-secondary hov" onClick={onAdd} disabled={count === initial} style={{"marginLeft":"20px"}}>
-                <img src='/assets/cart.svg' alt="" width="20px" /> </button>
+                <img src={cart} alt="" width="20px" /> </button>
 
 
         </div>

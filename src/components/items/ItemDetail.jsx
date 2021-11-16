@@ -1,8 +1,8 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
+import './itemDetail.css'
 
 const ItemDetail = ({ product }) => {
-
 
 
     // const [count, setCount] = useState(0);
@@ -14,8 +14,7 @@ const ItemDetail = ({ product }) => {
     // }
 
     return (
-        <Link to={`/detail/${id}`} type="button" className="btn"> 
-        <div className="container-fluid" style={{"display": "flex", "justifyContent":"space-evenly"}}>
+        <div className="container-fluid card-container" style={{"display": "flex", "justifyContent":"space-evenly"}}>
 
             <span>
                 <img src={product.img} className="card-img card-img-top" alt="foto del producto" />
@@ -34,7 +33,6 @@ const ItemDetail = ({ product }) => {
                 </div>
             </span>
         </div>
-        </Link>
 
     )
 }

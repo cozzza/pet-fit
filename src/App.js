@@ -13,7 +13,7 @@ function App() {
           <Switch>
             <Route exact path = '/'> <Index saludo='bienvenido a pet-fit' /> </Route>
             <Route exact path='/catalogo' component= {ItemListContainer} />
-            <Route exact path='/categoria/:id'/>
+            <Route exact path='/categoria/:id' component={ItemListContainer}/>
             <Route exact path='/item/:id' component={ItemDetailContainer} />
           </Switch>
 
