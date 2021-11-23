@@ -21,7 +21,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
             <button id="addItemCart" className="btn btn-secondary hov" onClick={() => onAdd(count)} disabled={count === initial} style={{ "marginLeft": "20px" }}>
                 <img src={cart} alt="" width="20px" /> </button>
-
         </div>
 
     )
