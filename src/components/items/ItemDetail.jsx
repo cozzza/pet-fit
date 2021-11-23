@@ -8,7 +8,6 @@ import {useCartContext} from '../Context/CartContext'
 
 const ItemDetail = ({ product }) => {
     const [wasClicked, setWasClicked] = useState(false)
-
     const {cartList, addItemtoCart} = useCartContext();
 
     const onAdd = (cant) =>{
