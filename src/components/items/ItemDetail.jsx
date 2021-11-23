@@ -3,15 +3,22 @@ import { Link } from 'react-router-dom'
 import { Cart } from '../Cart/Cart'
 import ItemCount from '../ItemCount/ItemCount'
 import './itemDetail.css'
+import {useCartContext} from '../Context/CartContext'
 
 
 const ItemDetail = ({ product }) => {
     const [wasClicked, setWasClicked] = useState(false)
 
+    const {cartList, addItemtoCart} = useCartContext();
+
     const onAdd = (cant) =>{
         setWasClicked(true);
+        addItemtoCart( 
+            {...product, cantidad: cant})
         console.log(cant)
     }
+
+    console.log(cartList)
 
     return (
         <div className="container-fluid card-container und" style={{"display": "flex", "justifyContent":"space-evenly"}}>

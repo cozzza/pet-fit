@@ -1,21 +1,21 @@
-import { Link } from 'react-router-dom'
-import { useCartContext } from '../Context/CartContext'
-import { CartEmpty } from './CartEmpty'
+// import { useCartContext } from '../Context/CartContext'
 
-export const Cart = () => {
-    const { addItem, removeItem, clearCart, itemsPrice, totalPrice } = useCartContext();
-    console.log(cart);
+// const Cart = () => {
+   
+//     const { cartList,  addItemtoCart, removeItemfromCart, clearCart, totalPrice } = useCartContext()
 
-    return (
-        <div>
-            {cart.length === 0 ? <CartEmpty h1="no hay productos en su carrito" /> :
-            
-            cart.map(item =>
-                <div> 
+//     console.log(cartList);
+
+//     return (
+//         <div>
+//            {
+//             cartList.map(item => 
+//                 <div> 
                     
-                </div>)
-            }
-        </div>
-    )
+//                 </div>)
+//             }
+//         </div>
+//     )
+// }
 
-}
+// export default Cart

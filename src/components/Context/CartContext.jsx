@@ -1,60 +1,50 @@
 import React, { useContext, createContext, useState } from 'react'
 
-export const CartContext = createContext();
+const CartContext = createContext([]);
 
-export const useCartContext = useContext(CartContext);
+export const useCartContext = () => {
+    return useContext(CartContext)
+}
 
 const CartContextProvider = ({children}) => {
-    const [cart, setCart] = useState([]);
+    const [cartList, setCartList] = useState([]);
 
-    const addItem = (item, cant) => {
-     
-        if (isInCart(item)) {
-            let newCart = cart;
-            newCart.forEach(cartItem => {
-                if(cartItem.id === item.id) {
-                    cartItem.cant += cant;
-                }
-            } );
-            setCart(newCart)
-        } 
-        else {
-            setCart( [...cart, {...item, cant} ] );
+    const addItemtoCart = (prod, cantidad)=> {
+        let inCartList = cartList.find((cartItem) => cartItem.id === prod.id);
+
+        if (inCartList) {
+            inCartList.cantidad += cantidad
+            setCartList([...cartList])
+        } else {
+            setCartList([...cartList, { ...prod, cantidad }])
         }
-    };
+    }
 
-    const removeItem = (id) => {
-        setCart(
-            cart.filter((item) => item.id !== id));
+    const removeItemfromCart = (id) => {
+        setCartList(
+            cartList.filter((prod) => prod.id !== id))
     }
 
     const clearCart = () => {
-        setCart([]);
+        setCartList([]);
     }
-
-    const isInCart = (item) => {
-        return cart.some(cartItem => cartItem.id)
+    
+    const cartItemCount = () => {
+        return cartList.reduce((acum, prod) => acum = acum + prod.cantidad, 0 )
     }
-
-    const itemsPrice = () => {
-        return cart.reduce((acum, item) => acum = acum + item.price, 0)
-
-    }   
 
     const totalPrice = () => {
-        return cartList.reduce((acum, item) => (acum += item.price * item.cantidad), 0)
+        return cartList.reduce((acum, prod) => acum += (prod.price * prod.cantidad), 0)
     }
 
     return <CartContext.Provider value = {{ 
-            addItem, 
-            removeItem, 
+            addItemtoCart, 
+            removeItemfromCart, 
             clearCart, 
-            itemsPrice, 
-            totalPrice
-        }}>
+            totalPrice,
+            cartItemCount
+        }} >
         {children} </CartContext.Provider>
 }
-
-cart = [ {item, cant}, {}, {}]
 
 export default CartContextProvider;
