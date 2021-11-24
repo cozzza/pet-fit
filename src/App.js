@@ -3,10 +3,13 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/items/ItemDetailContainer';
 import Index from './components/Index/Index';
+import CartContextProvider from './components/Context/CartContext';
+import {Cart} from './components/Cart/Cart'
 
 function App() {
 
   return (
+    <CartContextProvider>
       <BrowserRouter>
         <div className="App" style={{"backgroundColor":"#ece9ff"}}>
           <Navbar />
@@ -15,10 +18,12 @@ function App() {
             <Route exact path='/catalogo' component= {ItemListContainer} />
             <Route exact path='/categoria/:id' component={ItemListContainer}/>
             <Route exact path='/item/:id' component={ItemDetailContainer} />
+            <Route exact path='/cart' element={<Cart/>} />
           </Switch>
 
         </div>
       </BrowserRouter>
+      </CartContextProvider>
   );
 }
 
