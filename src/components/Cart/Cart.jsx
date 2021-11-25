@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Cart = () => {
 
-    const { cartList, cartItemCount, removeItemfromCart, clearCart, totalPrice } = useCartContext()
+    const { cartList, removeItemfromCart, clearCart, totalPrice } = useCartContext()
 
     console.log(cartList);
 
@@ -26,7 +26,7 @@ export const Cart = () => {
                                 <div className="card-text">
                                     <h4> Precio: ${prod.price * prod.cantidad}</h4>
                                     <h4> Cantidad: {prod.cantidad} </h4>
-                                    <button className="btn btn-outline-secondary ms-5" onClick={() => removeItemfromCart(prod.id)}> eliminar </button>
+                                    <button className="btn btn-outline-secondary ms-5" onClick={() => removeItemfromCart(prod.id, prod)}> eliminar </button>
                                 </div>
 
                             </span>
@@ -45,7 +45,6 @@ export const Cart = () => {
 
                     :
                     <>
-
                         <div className="card container text-center">
                             <div className="card-body">
                                 <h4 className="card-title">Su orden</h4>

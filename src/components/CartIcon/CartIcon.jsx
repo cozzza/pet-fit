@@ -5,9 +5,9 @@ import { useCartContext } from '../Context/CartContext';
 
 const CartIcon = () => {
 
-    const { cartItemCount } = useCartContext();
+    const { cantItems, cartList } = useCartContext();
 
-    console.log (cartItemCount())
+    console.log(cantItems)
 
     return (
 
@@ -15,10 +15,16 @@ const CartIcon = () => {
             <Link to={'/cart'}>
                 <div style={{ "display": "flex", "paddingTop": "5px", "marginRight": "10px" }}>
                     <img src={cart} alt="icono de carrito de compras" height="32px" />
+                    {
+
+                        cartList.length === 0 ? null
+                        :
+                            <h3> {cantItems}</h3>
+                    }
                 </div>
             </Link>
-            
-            <span> {cartItemCount()} </span>
+
+
         </>
 
     )
