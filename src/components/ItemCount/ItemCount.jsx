@@ -9,10 +9,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         esSuma ? setCount(count + 1) : setCount(count - 1)
     }
 
-    // const onAdd = () => {
-    //     if (count > 0) alert(`agregaste ${count} productos al carrito`) // agregar prod name
-    // }
-
     return (
         <div id="item-count">
             <button className="btn btn-secondary hov" id="decrement" onClick={() => op(false)} disabled={count === initial}> - </button>

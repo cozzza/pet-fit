@@ -18,9 +18,8 @@ function App() {
             <Route exact path='/catalogo' component= {ItemListContainer} />
             <Route exact path='/categoria/:id' component={ItemListContainer}/>
             <Route exact path='/item/:id' component={ItemDetailContainer} />
-            <Route exact path='/cart' component={<Cart/>} />
+            <Route exact path='/cart' component={Cart}/>
           </Switch>
-
         </div>
       </BrowserRouter>
       </CartContextProvider>

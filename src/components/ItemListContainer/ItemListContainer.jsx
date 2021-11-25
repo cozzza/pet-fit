@@ -35,8 +35,8 @@ function ItemListContainer() {
                     <div style={{ "display": "flex", "justifyContent": "end" }}>
                         <h5>Filtrar | </h5>
 
-                        <Link to={'/catalogo'} ><h5 style={{ "margin": "0 10px 0 10px" }} > Todos los productos</h5> </Link>
-                        <Link to={'/categoria/oferta'} ><h5 style={{ "margin": "0 10px 0 10px" }}> Ofertas </h5> </Link>
+                        <Link to={'/catalogo'} ><h5 style={{ "margin": "0 10px 0 10px", "textDecoration":"none"}} > Todos los productos</h5> </Link>
+                        <Link to={'/categoria/oferta'} ><h5 style={{ "textDecoration":"none", "margin": "0 10px 0 10px" }}> Ofertas </h5> </Link>
                     </div>
 
                     <div className="container, products-container">
