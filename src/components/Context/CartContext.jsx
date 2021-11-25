@@ -9,15 +9,15 @@ export const useCartContext = () => {
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([]);
 
-    const addItemtoCart = (product, cant)=> {
-        let inCartList = cartList.find((cartItem) => cartItem.id === product.id);
+    const addItemtoCart = (product)=> {
+        const inCartList = cartList.find((cartItem) => cartItem.id === product.id)
 
         if (inCartList) {
             console.log('is in cart')
-            inCartList.cantidad += cant
+            inCartList.cantidad += product.cantidad
             setCartList([...cartList])
         } else {
-            setCartList([...cartList, { ...product, cant }])
+            setCartList([...cartList, { ...product}])
         }
     }
 // esto 
@@ -31,11 +31,11 @@ const CartContextProvider = ({children}) => {
     }
     
     const cartItemCount = () => {
-        return cartList.reduce((acum, product) => acum = acum + product.cant, 0 )
+        return cartList.reduce((acum, product) => parseInt(acum = acum + product.cant) , 0 )
     }
 
     const totalPrice = () => {
-        return cartList.reduce((acum, product) => acum += (product.price * product.cant), 0)
+        return cartList.reduce((acum, product) => acum += (product.price * product.cantidad), 0)
     }
 
     return (
