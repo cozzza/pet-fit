@@ -53,7 +53,6 @@ export const Cart = () => {
                                 <button type="button" className="btn btn-outline-secondary ms-5 " onClick={clearCart}>Eliminar carrito</button>
                                 <button type="button" className="btn btn-outline-secondary ms-5 "><Link style={{ "textDecoration": "none" }} to={'/checkout'} className="card-link">Terminar compra</Link></button>
                                 <button type="button" className="btn btn-outline-secondary ms-5 "><Link style={{ "textDecoration": "none" }} to={'/catalogo'} className="card-link">Continuar comprando</Link></button>
-                                <h1>  prods: {cartItemCount()} </h1>
                             </div>
                         </div>
                     </>

@@ -17,7 +17,7 @@ const CartIcon = () => {
                     <img src={cart} alt="icono de carrito de compras" height="32px" />
                 </div>
             </Link>
-
+            
             <span> {cartItemCount()} </span>
         </>
 
