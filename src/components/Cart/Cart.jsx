@@ -3,28 +3,28 @@ import { Link } from 'react-router-dom';
 
 export const Cart = () => {
 
-    const { cartList, removeItemfromCart, clearCart, totalPrice } = useCartContext()
+    const { cartList, removeprodfromCart, clearCart, totalPrice } = useCartContext()
 
     console.log(cartList);
 
     return (
-        <>
+        <div>
             {
-                cartList.map(item =>
+                cartList.map(prod =>
                     <div>
                         <div>
-                            <img src={item.img} className="card-img card-img-top" alt="foto del itemo" />
+                            <img src={prod.img} className="card-img card-img-top" alt="foto del prodo" />
                             <br />
-                            <h3 className="card-text"> {item.description}</h3>
+                            <h3 className="card-text"> {prod.description}</h3>
                         </div>
                         <div className="card-title" >
-                            <h2 style={{ "fontWeight": "bold" }}>{item.name}</h2>
+                            <h2 style={{ "fontWeight": "bold" }}>{prod.name}</h2>
                         </div>
                         <div className="card-body" style={{ "textAlign": "center", "minWidth": "150px" }}>
-                            <h4 style={{ "marginBottom": "200px" }}> Precio: ${item.price}</h4>
-                            <h4> Cantidad: ${item.cantidad} </h4>
+                            <h4 style={{ "marginBottom": "200px" }}> Precio: ${prod.price}</h4>
+                            <h4> Cantidad: ${prod.cantidad} </h4>
                         </div>
-                        <i className="bi bi-trash-fill text-dark deletBtn fs-3" onClick={() => removeItemfromCart(item.id)}></i>
+                        <i className="bi bi-trash-fill text-dark deletBtn fs-3" onClick={() => removeprodfromCart(prod.id)}></i>
 
                     </div>
                 )
@@ -45,6 +45,6 @@ export const Cart = () => {
                     </>
 
             }
-        </>
+        </div>
     )
 }

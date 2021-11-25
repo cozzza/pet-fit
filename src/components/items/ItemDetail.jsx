@@ -1,6 +1,5 @@
 import React, { useState }  from 'react'
 import { Link } from 'react-router-dom'
-import { Cart } from '../Cart/Cart'
 import ItemCount from '../ItemCount/ItemCount'
 import './itemDetail.css'
 import {useCartContext} from '../Context/CartContext'
@@ -10,7 +9,7 @@ const ItemDetail = ({ product }) => {
     const [wasClicked, setWasClicked] = useState(false)
     const {cartList, addItemtoCart} = useCartContext();
 
-    const onAdd = (cant) =>{
+    const onAdd = (cant) => {
         setWasClicked(true);
         addItemtoCart( 
             {...product, cantidad: cant})
@@ -36,7 +35,7 @@ const ItemDetail = ({ product }) => {
                 <div className="card-body" style={{"textAlign":"center", "minWidth":"150px"}}>
                     <h4 style={{"marginBottom":"200px"}}> Precio: ${product.price}</h4>
                    {wasClicked ? ( 
-                       <Link to={'/cart'} component={Cart}> ir al carrito</Link>
+                       <Link to={'/cart'}> ir al carrito</Link>
                    ): (
                     <ItemCount initial={1} stock={10} onAdd={onAdd}/>
                    )}
