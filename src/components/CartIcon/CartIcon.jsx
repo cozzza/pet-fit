@@ -10,7 +10,6 @@ const CartIcon = () => {
     console.log(cantItems)
 
     return (
-
         <>
             <Link to={'/cart'}>
                 <div style={{ "display": "flex", "paddingTop": "5px", "marginRight": "10px" }}>
@@ -23,7 +22,6 @@ const CartIcon = () => {
                     }
                 </div>
             </Link>
-
 
         </>
 
