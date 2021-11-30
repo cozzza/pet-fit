@@ -1,24 +1,23 @@
-import { getFetch } from "../Services/getFetch";
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { getFirestore } from "../Services/getFirestore";
 
-const ItemDetailContainer = ()=>{
+const ItemDetailContainer = () =>{
     const [prod, setProd] = useState({})
 
     const {id} = useParams()
 
     useEffect(() => {
-        getFetch
-        .then(res => {        
-            setProd(res.find(element=> element.id === id))
+        const dbQuery = getFirestore()
+
+       dbQuery.collection('products').doc(id).get()
+        .then(res => {setProd({id: res.id, ...res.data()})
         })    
         .catch(err => console.log(err))
         .finally(()=> console.log(false))       
     },[id]) 
-
     
-      
     console.log(prod);
 
     return (

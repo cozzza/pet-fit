@@ -11,22 +11,18 @@ function ItemListContainer() {
 
     const { categoriaId } = useParams()
 
-    console.log({categoriaId})
+    console.log({ categoriaId })
 
     useEffect(() => {
         const dbQuery = getFirestore()
-        if (categoriaId) {
-            dbQuery.collection('products').where('categoriaId', '==', categoriaId).get()
-                .then(data => setProducts(data.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
-                .catch(err => console.log(err))
-                .finally(() => setLoading(false))
-        }
-        else{
-            dbQuery.collection('products').get()
-            .then(data => setProducts(data.docs.map(prod => ({id: prod.id} )) ))
+
+        const getDbQ = categoriaId ? dbQuery.collection('products').where('categoriaId', '==', categoriaId) : dbQuery.collection('products')
+
+        getDbQ.get()
+            .then(data => setProducts(data.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
-            }
+
 
     }, [categoriaId])
 

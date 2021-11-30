@@ -16,7 +16,7 @@ function App() {
           <Switch>
             <Route exact path = '/'> <Index saludo='bienvenido a pet-fit' /> </Route>
             <Route exact path='/catalogo' component= {ItemListContainer} />
-            <Route exact path='/catalogo/oferta' component={ItemListContainer}/>
+            <Route exact path='/catalogo/:categoriaId' component={ItemListContainer}/>
             <Route exact path='/item/:id' component={ItemDetailContainer} />
             <Route exact path='/cart' component={Cart}/>
           </Switch>
