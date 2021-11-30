@@ -13,10 +13,7 @@ const ItemDetail = ({ product }) => {
         setWasClicked(true);
         addItemtoCart(
             { ...product, cantidad: cant })
-        console.log(addItemtoCart)
     }
-
-    console.log(cartList)
 
     return (
         <div className="container-fluid card-container und" style={{ "display": "flex", "justifyContent": "space-evenly" }}>

@@ -1,9 +1,34 @@
 import { useCartContext } from '../Context/CartContext'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export const Cart = () => {
 
     const { cartList, removeItemfromCart, clearCart, totalPrice } = useCartContext()
+
+    const generateOrder = (e) => {
+        e.preventDefault()
+        const order = {}
+        // order.date = firebase.firestore.Timestamp.fromDate(new Date());
+        order.buyer = { name: 'juan', email: 'bla@gmail.com', phone: '111175897' }
+        order.total = totalPrice();
+
+        order.items = cartList.map(cartItem => {
+            const id = cartItem.id
+            const name = cartItem.name
+            const price = cartItem.price * cartItem.cantidad
+
+            return { id, name, price }
+        })
+
+        console.log()
+
+    }
+
+    // const [name, setName] = useState('')
+    // const [email, setEmail] = useState('')
+    // const [phone, setPhone] = useState('')
+
 
     console.log(cartList);
 
@@ -28,6 +53,10 @@ export const Cart = () => {
                                     <h4> Cantidad: {prod.cantidad} </h4>
                                     <button className="btn btn-outline-secondary ms-5" onClick={() => removeItemfromCart(prod.id, prod)}> eliminar </button>
                                 </div>
+
+                                <form action="" onSubmit={generateOrder}>
+                                    <button> enviar orden </button>
+                                </form>
 
                             </span>
                         </div>

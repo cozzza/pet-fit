@@ -13,8 +13,6 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig)
 
-// agregando nuestra funciones 
-
 export function getFirestore(){    
     return firebase.firestore(app)
 }

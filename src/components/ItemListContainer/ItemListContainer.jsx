@@ -11,8 +11,6 @@ function ItemListContainer() {
 
     const { categoriaId } = useParams()
 
-    console.log({ categoriaId })
-
     useEffect(() => {
         const dbQuery = getFirestore()
 
@@ -22,7 +20,6 @@ function ItemListContainer() {
             .then(data => setProducts(data.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
-
 
     }, [categoriaId])
 

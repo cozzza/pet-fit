@@ -14,7 +14,6 @@ const CartContextProvider = ({ children }) => {
         const inCartList = cartList.find((cartItem) => cartItem.id === product.id)
 
         if (inCartList) {
-            console.log('is in cart')
             inCartList.cantidad += product.cantidad
             setCartList([...cartList])
         } else {
@@ -23,7 +22,6 @@ const CartContextProvider = ({ children }) => {
 
         setcantItems(cantItems + product.cantidad)
 
-        console.log(cantItems)
     }
 
     const removeItemfromCart = (id, product) => {
@@ -31,7 +29,6 @@ const CartContextProvider = ({ children }) => {
             cartList.filter((product) => product.id !== id))
 
         setcantItems(cantItems - product.cantidad);
-        console.log(cantItems)
     }
 
     const clearCart = () => {

@@ -17,8 +17,6 @@ const ItemDetailContainer = () =>{
         .catch(err => console.log(err))
         .finally(()=> console.log(false))       
     },[id]) 
-    
-    console.log(prod);
 
     return (
         <>
