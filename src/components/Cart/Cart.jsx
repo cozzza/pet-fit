@@ -1,15 +1,27 @@
 import { useCartContext } from '../Context/CartContext'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { getFirestore } from '../Services/getFirestore';
 
 export const Cart = () => {
 
     const { cartList, removeItemfromCart, clearCart, totalPrice } = useCartContext()
 
+    const [idOrder, setIdOrder] = useState('')
+
+    const [formData, setFormData] = useState({
+        name: '' ,
+        phone: '' ,
+        email: ''
+    })
+
     const generateOrder = (e) => {
+      
         e.preventDefault()
         const order = {}
+
         // order.date = firebase.firestore.Timestamp.fromDate(new Date());
+       
         order.buyer = { name: 'juan', email: 'bla@gmail.com', phone: '111175897' }
         order.total = totalPrice();
 
@@ -21,17 +33,14 @@ export const Cart = () => {
             return { id, name, price }
         })
 
-        console.log()
+        console.log(order)
 
+        const dbQuery = getFirestore()
+        dbQuery.collection('orders').add(order)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
     }
-
-    // const [name, setName] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [phone, setPhone] = useState('')
-
-
-    console.log(cartList);
-
+    // ('su orden de compra es ')
     return (
         <>
             {
@@ -54,10 +63,6 @@ export const Cart = () => {
                                     <button className="btn btn-outline-secondary ms-5" onClick={() => removeItemfromCart(prod.id, prod)}> eliminar </button>
                                 </div>
 
-                                <form action="" onSubmit={generateOrder}>
-                                    <button> enviar orden </button>
-                                </form>
-
                             </span>
                         </div>
                     </div>
@@ -79,7 +84,7 @@ export const Cart = () => {
                                 <h4 className="card-title">Su orden</h4>
                                 <p className="card-text">Total: {totalPrice()}  </p>
                                 <button type="button" className="btn btn-outline-secondary ms-5 " onClick={clearCart}>Eliminar carrito</button>
-                                <button type="button" className="btn btn-outline-secondary ms-5 "><Link style={{ "textDecoration": "none" }} to={'/checkout'} className="card-link">Terminar compra</Link></button>
+                                <button type="button" className="btn btn-outline-secondary ms-5 " onClick='' ><Link style={{ "textDecoration": "none" }} to={'/checkout'} className="card-link">Terminar compra</Link></button>
                                 <button type="button" className="btn btn-outline-secondary ms-5 "><Link style={{ "textDecoration": "none" }} to={'/catalogo'} className="card-link">Continuar comprando</Link></button>
                             </div>
                         </div>
