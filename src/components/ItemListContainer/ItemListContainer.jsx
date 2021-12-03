@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import './itemListContainer.css'
 import { Link, useParams } from 'react-router-dom';
 import { getFirestore } from '../Services/getFirestore';
-
+import Loading from '../Loading'
 function ItemListContainer() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -25,7 +25,7 @@ function ItemListContainer() {
 
     return (
         <>
-            {loading ? <h2> Cargando...</h2>
+            {loading ? <Loading/>
                 :
                 <div className="container">
                     <h1> Catálogo </h1>
