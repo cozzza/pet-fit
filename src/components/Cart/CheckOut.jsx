@@ -55,7 +55,6 @@ const CheckOut = (props) => {
                                 Gracias por su compra {name} <br/> <br/>
                                 Su código de órden es: {idOrder}
                             </h3>
-                            
                         </Modal.Body>
                         <Modal.Footer>
                         </Modal.Footer>

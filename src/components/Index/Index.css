@@ -1,0 +1,33 @@
+
+#menu{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin-top: 5%;
+}
+
+#menu div{
+    min-width: 400px;
+    min-height: 300px;
+    padding-top: 50px;
+}
+
+#menu div:hover{
+    border: black dotted 0.5px;
+}
+
+
+#sale{
+    margin-top: 4%;
+    
+}
+
+#sale h1{
+    font-size: 100px;
+}
+
+#saludo{
+    text-align: center;
+}

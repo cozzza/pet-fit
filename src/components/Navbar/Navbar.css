@@ -2,31 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none !important;
 }
 
-.nav-items{
-    padding: 20px;
-    display: flex;
-    justify-content: space-between; 
-    background-color:#8674aa; 
-    align-items: center;
-  }
-  
-  .nav-items a{
-    text-decoration: none;
-    color: black;
-  }
-  
-  #user-section{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  }
-
-  .btn{
-    color: black;
-  }
-
-  .nav-items a:hover{
-    color:rgb(48, 32, 107);
-  }
+img #logo-petfit{
+  padding-right: 200px;
+}

@@ -75,7 +75,7 @@ export const Cart = () => {
                 cartList.length === 0 ?
                     <div style={{'minHeight':'100vh', 'textAlign':'center', 'marginTop':'15%'}}>
                         <h1 className="cart-empty" > No hay productos en el carrito </h1>
-                        <button type="button" className="btn btn-outline-secondary ms-5" style={{"marginTop":"2%"}}><Link style={{ "textDecoration": "none" }} to={'/catalogo'} className="card-link">Ir a comprar</Link></button>
+                        <button type="button" className="btn btn-outline-secondary ms-5" style={{"marginTop":"2%"}}><Link style={{ "textDecoration": "none" }} to={'/productos'} className="card-link">Ir a comprar</Link></button>
 
                     </div>
 
@@ -86,7 +86,7 @@ export const Cart = () => {
                                 <h4 className="card-title">Su orden</h4>
                                 <p className="card-text">Total: {totalPrice()}  </p>
                                 <button type="button" className="btn btn-outline-secondary ms-5" onClick={clearCart}>Eliminar carrito</button>
-                                <button type="button" className="btn btn-outline-secondary ms-5"><Link style={{ "textDecoration": "none" }} to={'/catalogo'} className="card-link">Continuar comprando</Link></button>
+                                <button type="button" className="btn btn-outline-secondary ms-5"><Link style={{ "textDecoration": "none" }} to={'/productos'} className="card-link">Continuar comprando</Link></button>
                                 <button type="button" className="btn btn-outline-secondary ms-5" show={showForm} onClick={()=> setShowForm(true)} > finalizar compra </button>
                                 <CheckOut show={showForm} onHide={() => setShowForm(false)} />
                             </div>
