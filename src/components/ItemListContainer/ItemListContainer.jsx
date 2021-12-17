@@ -15,11 +15,11 @@ function ItemListContainer() {
     useEffect(() => {
         const dbQuery = getFirestore()
 
-        //  = categoriaId || animal ? 
-
-        const getDbQ = animal ? dbQuery.collection('products').where('animal', '==', animal) : 
-        categoriaId ? dbQuery.collection('products').where('categoriaId', '==', categoriaId) : 
+        const getDbQ = animal ? dbQuery.collection('products').where('dog', '==', animal) :
+        categoriaId ? dbQuery.collection('products').where('categoriaId', '==', categoriaId) :
         dbQuery.collection('products')
+
+        console.log(getDbQ)
 
         getDbQ.get()
             .then(data => setProducts(data.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
@@ -38,9 +38,9 @@ function ItemListContainer() {
 
                         <h5>Filtrar | </h5>
                         <Link to={'/productos'} ><h5 style={{ "margin": "0 10px 0 10px", "textDecoration": "none" }}> Ver todo</h5> </Link>
-                        <Link to={'/productos/perros'}> <h5 style={{ "textDecoration": "none", "margin": "0 10px 0 10px" }}> Perros </h5></Link>
-                        <Link to={'/productos/gatos'} ><h5 style={{ "textDecoration": "none", "margin": "0 10px 0 10px" }}> Gatos </h5></Link>
-                        <Link to={'/productos/oferta'} ><h5 style={{ "textDecoration": "none", "margin": "0 10px 0 10px" }}> SALE </h5> </Link>
+                        <Link to={'/productos/pet/dog'}> <h5 style={{ "textDecoration": "none", "margin": "0 10px 0 10px" }}> Perros </h5></Link>
+                        <Link to={'/productos/pet/cat'} ><h5 style={{ "textDecoration": "none", "margin": "0 10px 0 10px" }}> Gatos </h5></Link>
+                        <Link to={'/productos/category/oferta'} ><h5 style={{ "textDecoration": "none", "margin": "0 10px 0 10px" }}> SALE </h5> </Link>
                     </div>
 
                     <div className="container, products-container">

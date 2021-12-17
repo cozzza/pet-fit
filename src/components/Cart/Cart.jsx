@@ -46,7 +46,7 @@ export const Cart = () => {
         <>
             {
                 cartList.map(prod =>
-                    <div className="container-fluid card-container" style={{ "display": "flex", "justifyContent": "space-evenly", 'minHeight':'100vh'}}>
+                    <div className="container-fluid card-container" style={{ "display": "flex", "justifyContent": "space-evenly"}}>
                         <div style={{ "display": "flex", 'marginTop':'5%'}}>
                             <span className="card-body">
                                 <img src={prod.img} style={{ "width": "200px" }} className="card-img card-img-top" alt="foto del prodo" />
@@ -86,7 +86,7 @@ export const Cart = () => {
                                 <h4 className="card-title">Su orden</h4>
                                 <p className="card-text">Total: {totalPrice()}  </p>
                                 <button type="button" className="btn btn-outline-secondary ms-5" onClick={clearCart}>Eliminar carrito</button>
-                                <button type="button" className="btn btn-outline-secondary ms-5"><Link style={{ "textDecoration": "none" }} to={'/productos'} className="card-link">Continuar comprando</Link></button>
+                                <button type="button" className="btn btn-outline-secondary ms-5"><Link style={{ "textDecoration": "none" }} to={'/productos'}>Continuar comprando</Link></button>
                                 <button type="button" className="btn btn-outline-secondary ms-5" show={showForm} onClick={()=> setShowForm(true)} > finalizar compra </button>
                                 <CheckOut show={showForm} onHide={() => setShowForm(false)} />
                             </div>

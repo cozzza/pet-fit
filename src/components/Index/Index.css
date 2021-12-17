@@ -20,8 +20,7 @@
 
 
 #sale{
-    margin-top: 4%;
-    
+    margin-top: 4%;  
 }
 
 #sale h1{
@@ -29,5 +28,6 @@
 }
 
 #saludo{
+    margin-top: 5%;
     text-align: center;
 }

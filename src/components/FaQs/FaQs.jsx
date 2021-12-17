@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const FaQs = () => {
     return (
         <div className='container-fluid'>
-            <div className='container-fluid'>
+            <div className='container-fluid' style={{'padding':'5%'}} >
                 <h2>Preguntas Frecuentes</h2>
                 <h5>
                     ENVÍOS:
@@ -13,7 +13,7 @@ const FaQs = () => {
                     ¿CUÁL ES EL COSTO DE ENVÍO Y A CARGO DE QUIÉN?
                 </h5>
 
-                <p>El costo de envío depende de la ubicación que hayas seleccionado. Es a cargo del cliente al menos que el producto indique lo contrario en ciertas ocasiones especiales. Vas a poder ver el valor del costo de envío en el checkout colocando tu código postal al momento del pago.
+                <p>El costo de envío depende de la ubicación que hayas seleccionado. Es a cargo del cliente al menos que el producto indique lo contrario en ciertas ocasiones.
                 </p>
 
                 <h5>¿DÓNDE PUEDO RECIBIR MI PEDIDO?</h5>
@@ -47,11 +47,11 @@ const FaQs = () => {
 
                 <p>
                 Si. Tenés 30 días para realizar el cambio después de haber hecho la compra.
-                Para las prendas que se compraron con descuento, se contempla el valor de lo que se pagó. <br/> 
-                Para poder realizar el cambio debes venir con el recibo de compra, factura, o talón de cambio. La prenda debe estar con etiqueta y en las mismas condiciones en las que fue entregada. 
+                Para los productos que se compraron con descuento, se contempla el valor de lo que se pagó. <br/> 
+                Para poder realizar el cambio debes venir con el recibo de compra, factura, o talón de cambio. El producto debe estar en las mismas condiciones en las que fue entregado.  <br /> <br />
 
                 <h5>¿DÓNDE PUEDO REALIZAR EL CAMBIO?</h5>
-                Podés realizar el cambio directamente por nuestro local (Thames 1906, de 12 a 19h). En el caso de ser con envío, se puede hacer por correo o mensajería, el costo queda a cargo del cliente.
+                Podés realizar el cambio directamente por nuestro local. En el caso de ser con envío, se puede hacer por correo o mensajería, el costo queda a cargo del cliente.
                 </p>
 
                 <h5> Para otras consultas <Link to= {'/contacto'}> contactanos</Link></h5>

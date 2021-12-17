@@ -19,7 +19,8 @@ function App() {
           <Switch >
             <Route exact path = '/'> <Index saludo='Bienvenido a PetFit' /> </Route>
             <Route exact path='/productos' component= {ItemListContainer} />
-            <Route exact path='/productos/:categoriaId' component={ItemListContainer}/>
+            <Route exact path='/productos/category/:categoriaId' component={ItemListContainer}/>
+            <Route exact path='/item/pet/:animal' component={ItemListContainer} />
             <Route exact path='/item/:id' component={ItemDetailContainer} />
             <Route exact path='/cart' component={Cart}/>
             <Route exact path='/contacto' component={Contacto}/> 

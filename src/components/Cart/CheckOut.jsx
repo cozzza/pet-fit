@@ -86,7 +86,7 @@ const CheckOut = (props) => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     style={{'width':'299px'}} 
-                                    placeholder=' ingrese su email'/> 
+                                    placeholder='nombre@mail.com'/> 
                                     <br />
                                 <label name='phone' style={{"marginRight":'10px'}}> Teléfono</label>
                                 <input type="text" name="phone" id=""
