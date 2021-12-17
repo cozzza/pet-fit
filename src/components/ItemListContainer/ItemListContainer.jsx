@@ -15,7 +15,7 @@ function ItemListContainer() {
     useEffect(() => {
         const dbQuery = getFirestore()
 
-        const getDbQ = animal ? dbQuery.collection('products').where('dog', '==', animal) :
+        const getDbQ = animal ? dbQuery.collection('products').where('animal', '==', animal) :
         categoriaId ? dbQuery.collection('products').where('categoriaId', '==', categoriaId) :
         dbQuery.collection('products')
 
