@@ -17,7 +17,6 @@ const ItemDetail = ({ product }) => {
 
     return (
         <div className="container-fluid card-container und" style={{ "display": "flex", "justifyContent": "space-evenly" }}>
-
             <span>
                 <img src={product.img} className="card-img card-img-top" alt="foto del producto" />
                 <br />
@@ -34,7 +33,7 @@ const ItemDetail = ({ product }) => {
                     {wasClicked ? (
                         <div>
                             <Link to={'/cart'}> ir al carrito</Link> <br />
-                            <Link to={'/catalogo'}>continuar comprando</Link>
+                            <Link to={'/productos'}>continuar comprando</Link>
                         </div>
                     ) : (
                         <ItemCount initial={0} stock={10} onAdd={onAdd} />
