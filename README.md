@@ -16,4 +16,4 @@ It consists of the creation of a virtual clothing store for pets with a wide cat
 
 PETFIT order example:
 
-![gif of a PETFIT order example](petfit-compra.gif)
+![gif of a PETFIT order example](/public/petfit-compra.gif)
