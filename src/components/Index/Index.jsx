@@ -11,13 +11,13 @@ const Index = ({ saludo }) => {
 
             <div id='menu' className='container-fluid'>
                 <div>
-                    <Link to={'/productos/pet/dog'}>
+                    <Link to={'/productos/dog'}>
                         <img src={dog} alt=''></img> <br /> <br />
                         <h2> Perros</h2>
                     </Link>
                 </div>
                 <div>
-                    <Link to={'/productos/pet/cat'}>
+                    <Link to={'/productos/cat'}>
                         <img src={cat} alt=''></img>
                         <h2>Gatos</h2>
                     </Link>

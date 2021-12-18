@@ -32,7 +32,6 @@ const Footer = () => {
                         Thames 1526, CABA
                     </h6>
                 </div>
-
                 <div>
                     <h5> FOLLOW </h5>
                     <div className='social-media' style={{ 'display': 'flex', 'justifyContent': 'space-evenly' }}>

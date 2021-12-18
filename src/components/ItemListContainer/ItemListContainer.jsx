@@ -27,7 +27,14 @@ function ItemListContainer() {
             .finally(() => setLoading(false))
 
     }, [animal, categoriaId])
+       
+    // const getAnimalDbQ = dbQuery.collection('products').where('animal', '==', animal)
+        // const getCategoriaIdDbQ = dbQuery.collection('products').where('categoriaId', '==', categoriaId)
+        // const getProductsDbQ = dbQuery.collection('products')
+       
+    //    const getDbQ = animal ? getAnimalDbQ : categoriaId ? getCategoriaIdDbQ : getProductsDbQ
 
+      
     return (
         <>
             {loading ? <Loading />
@@ -38,8 +45,8 @@ function ItemListContainer() {
 
                         <h5>Filtrar | </h5>
                         <Link to={'/productos'} ><h5 style={{ "margin": "0 10px 0 10px", "textDecoration": "none" }}> Ver todo</h5> </Link>
-                        <Link to={'/productos/pet/dog'}> <h5 style={{ "textDecoration": "none", "margin": "0 10px 0 10px" }}> Perros </h5></Link>
-                        <Link to={'/productos/pet/cat'} ><h5 style={{ "textDecoration": "none", "margin": "0 10px 0 10px" }}> Gatos </h5></Link>
+                        <Link to={'/productos/dog'}> <h5 style={{ "textDecoration": "none", "margin": "0 10px 0 10px" }}> Perros </h5></Link>
+                        <Link to={'/productos/cat'} ><h5 style={{ "textDecoration": "none", "margin": "0 10px 0 10px" }}> Gatos </h5></Link>
                         <Link to={'/productos/category/oferta'} ><h5 style={{ "textDecoration": "none", "margin": "0 10px 0 10px" }}> SALE </h5> </Link>
                     </div>
 

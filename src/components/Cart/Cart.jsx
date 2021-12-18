@@ -1,46 +1,13 @@
 import { useCartContext } from '../Context/CartContext'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { getFirestore } from '../Services/getFirestore';
-import firebase from 'firebase';
 import CheckOut  from './CheckOut'; 
 
 export const Cart = () => {
 
     const { cartList, removeItemfromCart, clearCart, totalPrice } = useCartContext()
 
-    const [idOrder, setIdOrder] = useState('')
-
     const [showForm, setShowForm] = useState(false)
-
-    const generateOrder = (e) => {
-      
-        e.preventDefault()
-        const order = {}
-
-        order.date = firebase.firestore.Timestamp.fromDate(new Date());
-       
-        // order.buyer = { name , email , phone  }
-        order.total = totalPrice();
-
-        order.items = cartList.map(cartItem => {
-            const id = cartItem.id
-            const name = cartItem.name
-            const price = cartItem.price * cartItem.cantidad
-
-            return { id, name, price }
-        })
-
-        console.log(order)
-
-        const dbQuery = getFirestore()
-        dbQuery.collection('orders').add(order)
-        .then(res => {
-            setIdOrder(res.id)})
-        .catch(err => console.log(err))
-
-    }
-
 
     return (
         <>
@@ -75,7 +42,7 @@ export const Cart = () => {
                 cartList.length === 0 ?
                     <div style={{'minHeight':'100vh', 'textAlign':'center', 'marginTop':'15%'}}>
                         <h1 className="cart-empty" > No hay productos en el carrito </h1>
-                        <button type="button" className="btn btn-outline-secondary ms-5" style={{"marginTop":"2%"}}><Link style={{ "textDecoration": "none" }} to={'/productos'} className="card-link">Ir a comprar</Link></button>
+                        <button type="button" className="btn btn-outline-secondary ms-5" style={{"marginTop":"2%"}}><Link style={{ "textDecoration": "none", 'color':'black' }} to={'/productos'} className="card-link">Ir a comprar</Link></button>
 
                     </div>
 
@@ -86,7 +53,7 @@ export const Cart = () => {
                                 <h4 className="card-title">Su orden</h4>
                                 <p className="card-text">Total: {totalPrice()}  </p>
                                 <button type="button" className="btn btn-outline-secondary ms-5" onClick={clearCart}>Eliminar carrito</button>
-                                <button type="button" className="btn btn-outline-secondary ms-5"><Link style={{ "textDecoration": "none" }} to={'/productos'}>Continuar comprando</Link></button>
+                                <button type="button" className="btn btn-outline-secondary ms-5"><Link style={{ "textDecoration": "none", 'color':'black'}} to={'/productos'}>Continuar comprando</Link></button>
                                 <button type="button" className="btn btn-outline-secondary ms-5" show={showForm} onClick={()=> setShowForm(true)} > finalizar compra </button>
                                 <CheckOut show={showForm} onHide={() => setShowForm(false)} />
                             </div>
