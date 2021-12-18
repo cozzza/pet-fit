@@ -20,8 +20,8 @@ const NavBar = () => {
                         <NavDropdown title="Productos" id="offcanvasNavbarDropdown">
                             <Nav.Link>  </Nav.Link>
                             <NavDropdown.Item ><Link to={'/productos'}> <h6> Todos los productos </h6></Link></NavDropdown.Item>
-                            <NavDropdown.Item ><Link to={'/productos/pet/dog'}> <h6> Perros </h6></Link></NavDropdown.Item>
-                            <NavDropdown.Item ><Link to={'/productos/pet/cat'}> <h6> Gatos </h6></Link></NavDropdown.Item>
+                            <NavDropdown.Item ><Link to={'/productos/dog'}> <h6> Perros </h6></Link></NavDropdown.Item>
+                            <NavDropdown.Item ><Link to={'/productos/cat'}> <h6> Gatos </h6></Link></NavDropdown.Item>
                             <NavDropdown.Item ><Link to={'/productos/category/oferta'}> <h6> Ofertas </h6></Link></NavDropdown.Item>
                         </NavDropdown>
 
