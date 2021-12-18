@@ -14,3 +14,6 @@ It consists of the creation of a virtual clothing store for pets with a wide cat
 - [GitHub] {https://github.com/cozzza}
 - [LinkedIn] {https://www.linkedin.com/in/julietacozza/}
 
+PETFIT order example:
+
+![gif of a PETFIT order example](petfit-compra.gif)
